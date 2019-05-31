@@ -455,54 +455,54 @@
     <span class="govuk-caption-m">12/05/19 to 17/05/19</span>
     <h2 class="govuk-heading-l">Sprint 4</h2>
       <h2 class="govuk-heading-m">Iteration made</h2>
-    {{ govukTable({
-      head: [
-        {
-          text: "User research insight"
-        },
-        {
-          text: "Potential solutions"
-        },
-        {
-          text: "Iterations made"
-        }
-      ],
-      rows: [
-        [
+      {{ govukTable({
+        head: [
           {
-            text: "Insight 1"
+            text: "User research insight"
           },
           {
-            text: "Interpretation 1"
+            text: "Potential solutions"
           },
           {
-            text: "Iteration 1"
+            text: "Iteration made"
           }
         ],
-        [
-          {
-            text: "Insight 2"
-          },
-          {
-            text: "Interpretation 2"
-          },
-          {
-            text: "Iteration 2"
-          }
-        ],
-        [
-          {
-            text: "Insight 3"
-          },
-          {
-            text: "Interpretation 3"
-          },
-          {
-            text: "Iteration 3"
-          }
+        rows: [
+          [
+            {
+              text: "Insight 1"
+            },
+            {
+              text: "Interpretation 1"
+            },
+            {
+              text: "Iteration 1"
+            }
+          ],
+          [
+            {
+              text: "Insight 2"
+            },
+            {
+              text: "Interpretation 2"
+            },
+            {
+              text: "Iteration 2"
+            }
+          ],
+          [
+            {
+              text: "Insight 3"
+            },
+            {
+              text: "Interpretation 3"
+            },
+            {
+              text: "Iteration 3"
+            }
+          ]
         ]
-      ]
-    }) }}
+      }) }}
 
     <h2 class="govuk-heading-m">Confidence level</h2>
     {% from "details/macro.njk" import govukDetails %}
