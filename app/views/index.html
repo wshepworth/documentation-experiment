@@ -1,0 +1,605 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  documentation
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column">
+      <h1 class="govuk-heading-xl">
+        Design documentation
+        <span class="govuk-caption-xl">Last update {{releaseVersion}}</span>
+      </h1>{{releaseVersion | log }}
+      <p>
+        This is a description of what the page is about.
+      </p>
+
+      <ul class="govuk-grid-row card-container">
+        <div class="govuk-grid-column-one-third"
+          <li class="card-list">
+            <div class="card">
+              <span class="govuk-heading-xl">12</span>
+                <p class="govuk-body-m">users researched with across alpha and beta</p>
+                <div class="card-footer govuk-accordion" data-module="accordion" id="accordion-default">
+                  <div class="govuk-accordion__section ">
+                    <div class="govuk-accordion__section-header">
+                      <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                          See more details
+                        </span>
+                      </h2>
+                    </div>
+                    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li>8 users in alpha</li>
+                        <li>4 users in beta</li>
+                        <li>12 users with accessibility needs</li>
+                        <li>3 users allergic to coffee</li>
+                        <li>15 contextual observations</li>
+                      </ul>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </li>
+        </div>
+        <div class="govuk-grid-column-one-third"
+          <li class="card-list">
+            <div class="card">
+                <span class="govuk-heading-xl">6</span>
+                <p class="govuk-body-m">users researched with accessibility needs</p>
+                  <div class="card-footer govuk-accordion" data-module="accordion" id="accordion-default">
+                    <div class="govuk-accordion__section ">
+                      <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                          <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                            See more details
+                          </span>
+                        </h2>
+                      </div>
+                      <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                        <ul class="govuk-list govuk-list--bullet">
+                          <li>2 users with dementia</li>
+                          <li>2 users registered blind</li>
+                          <li>2 users with motor impairments</li>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </li>
+        </div>
+        <div class="govuk-grid-column-one-third"
+          <li class="card-list">
+            <div class="card">
+              <span class="govuk-heading-xl">80%</span>
+              <p class="govuk-body-m">of the team have observed research in the past 2 weeks</p>
+              <div class="card-footer govuk-accordion" data-module="accordion" id="accordion-default">
+                <div class="govuk-accordion__section ">
+                  <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                      <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                        See more details
+                      </span>
+                    </h2>
+                  </div>
+                  <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>Colin</li>
+                      <li>Will</li>
+                      <li>Jessie</li>
+                      <li>Leah</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </div>
+        </ul>
+
+      <div class="govuk-tabs" data-module="tabs">
+        <h2 class="govuk-tabs__title">
+          Contents
+        </h2>
+
+    {% from "tabs/macro.njk" import govukTabs %}
+    {% from "table/macro.njk" import govukTable %}
+
+    {% set pastDayHtml %}
+    <span class="govuk-caption-m">12/05/19 to 17/05/19</span>
+    <h2 class="govuk-heading-l">Sprint 1</h2>
+        <h2 class="govuk-heading-m">Iteration made</h2>
+    {{ govukTable({
+      head: [
+        {
+          text: "User research insight"
+        },
+        {
+          text: "Potential solutions"
+        },
+        {
+          text: "Iteration made"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "Insight 1"
+          },
+          {
+            text: "Interpretation 1"
+          },
+          {
+            text: "Iteration 1"
+          }
+        ],
+        [
+          {
+            text: "Insight 2"
+          },
+          {
+            text: "Interpretation 2"
+          },
+          {
+            text: "Iteration 2"
+          }
+        ],
+        [
+          {
+            text: "Insight 3"
+          },
+          {
+            text: "Interpretation 3"
+          },
+          {
+            text: "Iteration 3"
+          }
+        ]
+      ]
+    }) }}
+    <h2 class="govuk-heading-m">Confidence level</h2>
+    {% from "details/macro.njk" import govukDetails %}
+
+    {{ govukDetails({
+      summaryText: "What is this?",
+      text: "Confidence can rise and fall in the course of a user journey, depending on what we know at that time. This helps the team, and the wider organisation, understand and prioritise what needs more work."
+    }) }}
+
+    {{ govukTable({
+      head: [
+        {
+          text: "User journey step"
+        },
+        {
+          text: "Confidence"
+        }
+      ],
+      rows: [
+        [
+          {
+            html: "<a href='#'>Start page</a>"
+          },
+          {
+            html: "<strong class='govuk-tag govuk-phase-banner__content__tag high'>high</strong>"
+          }
+        ],
+        [
+          {
+            html: "<a href='#'>Confirm email</a>"
+          },
+          {
+            html: "<strong class='govuk-tag govuk-phase-banner__content__tag medium'>medium</strong>"
+          }
+        ],
+        [
+          {
+            html: "<a href='#'>Landing page</a>"
+          },
+          {
+            html: "<strong class='govuk-tag govuk-phase-banner__content__tag low'>low</strong>"
+          }
+        ]
+      ]
+    }) }}
+
+    <h3 class="govuk-heading-m">Useful links</h3>
+    <ul class="govuk-list">
+      <li>
+        <a class="govuk-link" href="#">Discussion guide</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Research plan</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">User videos</a>
+      </li>
+    </ul>
+
+    {% endset -%}
+
+    {% set pastWeekHtml %}
+    <span class="govuk-caption-m">12/05/19 to 17/05/19</span>
+    <h2 class="govuk-heading-l">Sprint 2</h2>
+        <h2 class="govuk-heading-m">Iteration made</h2>
+    {{ govukTable({
+      head: [
+        {
+          text: "User research insight"
+        },
+        {
+          text: "Potential solutions"
+        },
+        {
+          text: "Iteration made"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "Insight 1"
+          },
+          {
+            text: "Interpretation 1"
+          },
+          {
+            text: "Iteration 1"
+          }
+        ],
+        [
+          {
+            text: "Insight 2"
+          },
+          {
+            text: "Interpretation 2"
+          },
+          {
+            text: "Iteration 2"
+          }
+        ],
+        [
+          {
+            text: "Insight 3"
+          },
+          {
+            text: "Interpretation 3"
+          },
+          {
+            text: "Iteration 3"
+          }
+        ]
+      ]
+    }) }}
+    <h2 class="govuk-heading-m">Confidence level</h2>
+    {% from "details/macro.njk" import govukDetails %}
+
+    {{ govukDetails({
+      summaryText: "What is this?",
+      text: "Confidence can rise and fall in the course of a user journey, depending on what we know at that time. This helps the team, and the wider organisation, understand and prioritise what needs more work."
+    }) }}
+
+    {{ govukTable({
+      head: [
+        {
+          text: "User journey step"
+        },
+        {
+          text: "Confidence"
+        }
+      ],
+      rows: [
+        [
+          {
+            html: "<a href='#'>Start page</a>"
+          },
+          {
+            html: "<strong class='govuk-tag govuk-phase-banner__content__tag high'>high</strong>"
+          }
+        ],
+        [
+          {
+            html: "<a href='#'>Confirm email</a>"
+          },
+          {
+            html: "<strong class='govuk-tag govuk-phase-banner__content__tag medium'>medium</strong>"
+          }
+        ],
+        [
+          {
+            html: "<a href='#'>Landing page</a>"
+          },
+          {
+            html: "<strong class='govuk-tag govuk-phase-banner__content__tag low'>low</strong>"
+          }
+        ]
+      ]
+    }) }}
+
+    <h3 class="govuk-heading-m">Useful links</h3>
+    <ul class="govuk-list">
+      <li>
+        <a class="govuk-link" href="#">Discussion guide</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Research plan</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">User videos</a>
+      </li>
+    </ul>
+    {% endset -%}
+
+    {% set pastMonthHtml %}
+    <span class="govuk-caption-m">12/05/19 to 17/05/19</span>
+    <h2 class="govuk-heading-l">Sprint 3</h2>
+        <h2 class="govuk-heading-m">Iteration made</h2>
+    {{ govukTable({
+      head: [
+        {
+          text: "User research insight"
+        },
+        {
+          text: "Potential solutions"
+        },
+        {
+          text: "Iteration made"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "Insight 1"
+          },
+          {
+            text: "Interpretation 1"
+          },
+          {
+            text: "Iteration 1"
+          }
+        ],
+        [
+          {
+            text: "Insight 2"
+          },
+          {
+            text: "Interpretation 2"
+          },
+          {
+            text: "Iteration 2"
+          }
+        ],
+        [
+          {
+            text: "Insight 3"
+          },
+          {
+            text: "Interpretation 3"
+          },
+          {
+            text: "Iteration 3"
+          }
+        ]
+      ]
+    }) }}
+    <h2 class="govuk-heading-m">Confidence level</h2>
+    {% from "details/macro.njk" import govukDetails %}
+
+    {{ govukDetails({
+      summaryText: "What is this?",
+      text: "Confidence can rise and fall in the course of a user journey, depending on what we know at that time. This helps the team, and the wider organisation, understand and prioritise what needs more work."
+    }) }}
+
+    {{ govukTable({
+      head: [
+        {
+          text: "User journey step"
+        },
+        {
+          text: "Confidence"
+        }
+      ],
+      rows: [
+        [
+          {
+            html: "<a href='#'>Start page</a>"
+          },
+          {
+            html: "<strong class='govuk-tag govuk-phase-banner__content__tag high'>high</strong>"
+          }
+        ],
+        [
+          {
+            html: "<a href='#'>Confirm email</a>"
+          },
+          {
+            html: "<strong class='govuk-tag govuk-phase-banner__content__tag medium'>medium</strong>"
+          }
+        ],
+        [
+          {
+            html: "<a href='#'>Landing page</a>"
+          },
+          {
+            html: "<strong class='govuk-tag govuk-phase-banner__content__tag low'>low</strong>"
+          }
+        ]
+      ]
+    }) }}
+
+    <h3 class="govuk-heading-m">Useful links</h3>
+    <ul class="govuk-list">
+      <li>
+        <a class="govuk-link" href="#">Discussion guide</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Research plan</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">User videos</a>
+      </li>
+    </ul>
+    {% endset -%}
+
+    {% set pastYearHtml %}
+    <span class="govuk-caption-m">12/05/19 to 17/05/19</span>
+    <h2 class="govuk-heading-l">Sprint 4</h2>
+      <h2 class="govuk-heading-m">Iteration made</h2>
+    {{ govukTable({
+      head: [
+        {
+          text: "User research insight"
+        },
+        {
+          text: "Potential solutions"
+        },
+        {
+          text: "Iterations made"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "Insight 1"
+          },
+          {
+            text: "Interpretation 1"
+          },
+          {
+            text: "Iteration 1"
+          }
+        ],
+        [
+          {
+            text: "Insight 2"
+          },
+          {
+            text: "Interpretation 2"
+          },
+          {
+            text: "Iteration 2"
+          }
+        ],
+        [
+          {
+            text: "Insight 3"
+          },
+          {
+            text: "Interpretation 3"
+          },
+          {
+            text: "Iteration 3"
+          }
+        ]
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">Confidence level</h2>
+    {% from "details/macro.njk" import govukDetails %}
+
+    {{ govukDetails({
+      summaryText: "What is this?",
+      text: "Confidence can rise and fall in the course of a user journey, depending on what we know at that time. This helps the team, and the wider organisation, understand and prioritise what needs more work."
+    }) }}
+
+    {{ govukTable({
+      head: [
+        {
+          text: "User journey step"
+        },
+        {
+          text: "Confidence"
+        }
+      ],
+      rows: [
+        [
+          {
+            html: "<a href='#'>Start page</a>"
+          },
+          {
+            html: "<strong class='govuk-tag govuk-phase-banner__content__tag high'>high</strong>"
+          }
+        ],
+        [
+          {
+            html: "<a href='#'>Confirm email</a>"
+          },
+          {
+            html: "<strong class='govuk-tag govuk-phase-banner__content__tag medium'>medium</strong>"
+          }
+        ],
+        [
+          {
+            html: "<a href='#'>Landing page</a>"
+          },
+          {
+            html: "<strong class='govuk-tag govuk-phase-banner__content__tag low'>low</strong>"
+          }
+        ]
+      ]
+    }) }}
+
+
+    <h3 class="govuk-heading-m">Useful links</h3>
+    <ul class="govuk-list">
+      <li>
+        <a class="govuk-link" href="#">Discussion guide</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">Research plan</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">User videos</a>
+      </li>
+    </ul>
+
+    {% endset -%}
+
+    {{ govukTabs({
+      items: [
+        {
+          label: "Sprint 1",
+          id: "sprint-1",
+          panel: {
+            html: pastDayHtml
+          }
+        },
+        {
+          label: "Sprint 2",
+          id: "sprint-2",
+          panel: {
+            html: pastWeekHtml
+          }
+        },
+        {
+          label: "Sprint 3",
+          id: "sprint-3",
+          panel: {
+            html: pastMonthHtml
+          }
+        },
+        {
+          label: "Sprint 4",
+          id: "sprint-4",
+          panel: {
+            html: pastYearHtml
+          }
+        }
+      ]
+    }) }}
+
+      </div>
+    </div>
+</div>
+
+{% endblock %}
