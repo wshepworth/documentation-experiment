@@ -42,16 +42,30 @@ p.govuk-body-m {
 .govuk-grid-column-one-third:first-child {
   padding-left: 0px;
   padding-right: 10px;
+
+  @media only screen and (max-width: 640px) {
+    padding-right: 0px;
+  }
+
   }
 
 .govuk-grid-column-one-third:last-child {
   padding-left: 10px;
   padding-right: 0px;
+
+  @media only screen and (max-width: 640px) {
+    padding-left: 0px;
+  }
   }
 
 .govuk-grid-column-one-third {
   padding-left: 10px;
   padding-right: 10px;
+
+  @media only screen and (max-width: 640px) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 
 .card {
