@@ -54,6 +54,8 @@ app.use(handleCookies)
 documentationApp.use(handleCookies)
 
 // Set up configuration variables
+var dateFormat = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+var lastUpdated = new Date();
 var releaseVersion = packageJson.version
 var env = (process.env.NODE_ENV || 'development').toLowerCase()
 var useAutoStoreData = process.env.USE_AUTO_STORE_DATA || config.useAutoStoreData
@@ -177,6 +179,7 @@ app.locals.useCookieSessionStore = (useCookieSessionStore === 'true')
 app.locals.cookieText = config.cookieText
 app.locals.promoMode = promoMode
 app.locals.releaseVersion = 'v' + releaseVersion
+app.locals.lastUpdated = lastUpdated.toLocaleDateString("en-GB", dateFormat)
 app.locals.serviceName = config.serviceName
 // extensionConfig sets up variables used to add the scripts and stylesheets to each page.
 app.locals.extensionConfig = extensions.getAppConfig()
