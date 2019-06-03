@@ -99,7 +99,7 @@ p.govuk-body-m {
 }
 
 .govuk-heading-xl {
-  padding-top: 50px;
+  padding-top: 10px;
 }
 
 .govuk-tag.govuk-phase-banner__content__tag.high {
@@ -113,4 +113,10 @@ p.govuk-body-m {
 
 .govuk-tag.govuk-phase-banner__content__tag.low {
   background-color: $govuk-error-colour;
+}
+
+.logo-large {
+  width: 18%;
+  height: 18%;
+  margin-top: 30px;
 }
